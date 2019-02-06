@@ -54,15 +54,16 @@ def bmi_category(bmi):
 
 # To read the csv file and compare with the bmi resutl and match with the player name
 def compare_userbmi_with_player(bmi):
-    print(type(bmi))
-    csv_file = open ('..','data',"all_players_data.csv","r")
+    #print(type(bmi))
+    #csv_file = open ('..','data',"all_players_data.csv","r")
+    csv_file = open (os.path.join('..','code/tsqa-basic/data',"all_players_data.csv"),"r")
     matched_player = []
     csv_reader = csv.reader(csv_file, delimiter=',')
     next(csv_reader)
     #line_count = 0
     #for row in csv_reader:
     for i, row in enumerate(csv_reader):
-        print(type(row[3]))
+        #print(type(row[3]))
         bmi_value_in_row = float(row[3])
         player_name = row[0]
         if float(bmi_value_in_row) == bmi:
